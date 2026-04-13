@@ -1,2 +1,2 @@
-# multi-gateway-payment-engine
+# Multi-Gateway-Payment-Engine
 Multi-Gateway Payment Orchestration Engine
