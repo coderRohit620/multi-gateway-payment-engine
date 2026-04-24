@@ -13,6 +13,16 @@ app.use(express.urlencoded({extended:true, limit:"16kb"}))
 app.use(express.static("public"))
 app.use(cookieParser())
 
+// routes Import
+import paymentRoutes from "./api/routes/paymentRoutes.js"
 
-export {app}
+
+// routes declaration
+app.use("/api/v1/payments", paymentRoutes);
+
+app.get("/", (req, res) => {
+  res.send("Server working");
+});
+
+export { app }
 
