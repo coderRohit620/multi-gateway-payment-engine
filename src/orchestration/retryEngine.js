@@ -1,5 +1,5 @@
 import ApiError from "../utils/apiError.js";
-import { getGatewayHandler } from "../gateways/gatewayFactory.js";
+import { getGatewayHandler } from "../gateways/gateway.factory.js";
 
 const MAX_RETRIES = 2;
 
