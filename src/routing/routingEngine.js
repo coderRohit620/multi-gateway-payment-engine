@@ -1,10 +1,13 @@
+export const selectGateways = (context) => {
+  const { paymentMethod, amount } = context;
 
+  if (paymentMethod === "UPI") {
+    return ["UPI_MOCK", "RAZORPAY"];
+  }
 
-export const selectGateway = (context) => {
-    const { amount, paymentMethod } = context;
+  if (amount > 5000) {
+    return ["STRIPE", "RAZORPAY"];
+  }
 
-    if (paymentMethod === "UPI") return "UPI_MOCK";
-    if (amount > 5000) return "STRIPE";
-
-    return "RAZORPAY";
+  return ["RAZORPAY", "STRIPE"];
 };
