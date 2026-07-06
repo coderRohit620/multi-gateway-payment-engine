@@ -14,7 +14,8 @@ app.use(express.static("public"))
 app.use(cookieParser())
 
 // routes Import
-import paymentRoutes from "./api/routes/paymentRoutes.js"
+import paymentRoutes from "./api/routes/payment.routes.js"
+import errorMiddleware from "./api/middlewares/error.middleware.js"
 
 
 // routes declaration
@@ -23,6 +24,8 @@ app.use("/api/v1/payments", paymentRoutes);
 app.get("/", (req, res) => {
   res.send("Server working");
 });
+
+app.use(errorMiddleware);
 
 export { app }
 
